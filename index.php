@@ -1,9 +1,9 @@
 <?php
 
 require 'function.php';
+require 'Task.php';
 
-$animals = ['dog', 'cat'];
-
-dd($animals);
+$pdo = connectToDb();
+$tasks = fetchAllTasks($pdo);
 
 require 'index.view.php';
