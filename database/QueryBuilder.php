@@ -9,10 +9,10 @@ class QueryBuilder
     $this->pdo = $pdo;
   }
 
-  public function selectAll($table)
+  public function selectAll($table, $intoClass)
   {
     $statement = $this->pdo->prepare("select * from {$table}"); //クエリの組み立て
     $statement->execute(); //クエリの実行
-    return $statement->fetchAll(PDO::FETCH_CLASS);
+    return $statement->fetchAll(PDO::FETCH_CLASS, $intoClass);
   }
 }
