@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <?php require('partials/nav.php'); ?>
+<?php require('partials/head.php'); ?>
 
-  <h1>Our Culture at <?= $name; ?></h1>  
-</body>
-</html>
+  <h1>Our Culture at <?= $name; ?></h1>
+
+<?php require('partials/footer.php'); ?>
