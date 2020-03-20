@@ -4,6 +4,13 @@ class Router
 {
   protected $routes = []; // $this->routesがココに入る
 
+  public static function load($file)
+  {
+    $router = new static;
+    require $file;
+    return $router; //staticインスタンスなので、$thisではなくrouterインスタンスを返すようにする
+  }
+
   public function define($routes)
   {
     $this->routes = $routes;
