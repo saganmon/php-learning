@@ -2,6 +2,7 @@
 
 class QueryBuilder
 {
+  // 属性
   protected $pdo;
 
   public function __construct($pdo)

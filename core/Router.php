@@ -2,12 +2,14 @@
 
 class Router
 {
+  // 属性
   public $routes = [
     'GET' => [],
     'POST' => []
   ];
 
-  public static function load($file)
+  //インスタンスメソッド
+  public static function load($file) //routes.phpの読み込み
   {
     $router = new static;
     require $file;
