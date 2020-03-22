@@ -1,15 +1,7 @@
 <?php
 
-$app = [];
+App::bind('config', require 'config.php'); //requireで配列を提供している
 
-$app['config'] = require 'config.php';
-
-// composerを入れたので削除
-// require 'core/Router.php';
-// require 'core/Request.php';
-// require 'core/database/Connection.php';
-// require 'core/database/QueryBuilder.php';
-
-$app['database'] = new QueryBuilder(
-  Connection::make($app['config']['database'])
-);
+App::bind('database', new QueryBuilder(
+  Connection::make(App::get('config')['database'])
+));
