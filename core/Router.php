@@ -1,5 +1,6 @@
 <?php
 
+namespace App\Core;
 class Router
 {
   // 属性
@@ -38,7 +39,8 @@ class Router
 
   private function callAction($controller, $action)
   {
-    $controller = new $controller;
+    $controller = "App\\Controllers\\{$controller}";
+    $controller = new $controller; //新しいコントローラーの生成
     if (! method_exists($controller, $action)){
       throw new Exception(
         "{$controller} does not respond to the {$action} action."

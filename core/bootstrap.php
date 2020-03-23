@@ -1,5 +1,7 @@
 <?php
 
+use App\Core\App;
+
 App::bind('config', require 'config.php'); //requireで配列を提供している
 
 App::bind('database', new QueryBuilder(
@@ -9,7 +11,7 @@ App::bind('database', new QueryBuilder(
 function view($name, $data = [])
 {
   extract($data); //extractで配列から変数を作成
-  return require "views/{$name}.view.php";
+  return require "app/views/{$name}.view.php";
 }
 
 function redirect($path)
